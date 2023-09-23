@@ -1,9 +1,13 @@
 import { createRoot } from "react-dom/client";
 import { MainContent } from './components/react/MainContent';
+import { Header } from "./components/react/Header";
 
 const App = () => {
   return (
-  <MainContent /> 
+    <>
+      <Header/>
+      <MainContent />
+    </>
   );
 };
 
