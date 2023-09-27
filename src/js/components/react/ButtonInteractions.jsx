@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-const goingMessage = () => {
+const GoingMessage = ({handleGoingClick}) => {
   return (
     <>
       <span className="check">✔</span>
@@ -11,6 +11,7 @@ const goingMessage = () => {
           data-interaction="${going}"
           data-template="${remove}"
           className="button-link"
+          onClick={handleGoingClick}
         >
           Changed your mind?
         </button>
@@ -20,27 +21,35 @@ const goingMessage = () => {
 };
 
 const EventInteractions = () => {
+  const [going, setGoing] = useState(false);
+
+  function handleGoingClick() {
+    setGoing(!going);
+  }
 
     return (
       <>
-        <div className="going-and-interested" data-id="${id}">
-          <button
-            className="going"
-            data-id="${id}"
-            data-interaction="${going}"
-            data-template="${going}"
-          >
-            Going!
-          </button>
-          <button
-            className="interested"
-            data-id="${id}"
-            data-interaction="${interested}"
-            data-template="${interested}"
-          >
-            Interested
-          </button>
-        </div>
+        {going ? null : (
+          <div className="going-and-interested" data-id="${id}">
+            <button
+              className="going"
+              data-id="${id}"
+              data-interaction="${going}"
+              data-template="${going}"
+              onClick={handleGoingClick}
+            >
+              Going!
+            </button>
+            <button
+              className="interested"
+              data-id="${id}"
+              data-interaction="${interested}"
+              data-template="${interested}"
+            >
+              Interested
+            </button>
+          </div>
+        )}
         <button
           className="heart"
           data-id="${id}"
@@ -48,6 +57,8 @@ const EventInteractions = () => {
         >
           Favorite
         </button>
+
+        {going ? <GoingMessage handleGoingClick={handleGoingClick} /> : null}
       </>
   );
 };
