@@ -1,3 +1,5 @@
+import {EventInteractions} from './ButtonInteractions';
+
 const response = [
   {
     "id": "232424737647",
@@ -61,9 +63,7 @@ const Card = ({id, title, image, location, price}) => {
         <strong>{price}</strong>
       </div>
       <div className="interactions-container" data-id={id}>
-        <button>Interested</button>
-        <button>Going!</button>
-        <button>Favorite</button>
+        <EventInteractions />
       </div>
     </div>
   </li>
