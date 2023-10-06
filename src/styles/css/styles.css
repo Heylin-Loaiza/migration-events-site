@@ -69,18 +69,20 @@ img {
   width: 80%;
   margin: 0 auto;
 }
-.header button {
+.header .header__tabs-item {
   padding: 10px 0;
   font-weight: bold;
   border: none;
   background-color: #000;
   color: #fff;
+  text-align: center;
 }
-.header button:hover, .header button:focus {
+.header .header__tabs-item:hover, .header .header__tabs-item:focus {
   background-color: #fdfefd;
   color: #000;
+  cursor: pointer;
 }
-.header button::first-letter {
+.header .header__tabs-item::first-letter {
   text-transform: uppercase;
 }
 .header .active {
@@ -96,6 +98,7 @@ img {
 .header #my-account:hover,
 .header #back-events:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 .header #my-account {
   right: 5%;

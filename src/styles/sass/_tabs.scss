@@ -10,20 +10,22 @@
     margin: 0 auto;
   }
 
-  button {
+  .header__tabs-item {
     padding: 10px 0;
     font-weight: bold;
     border: none;
     background-color: $black;
     color: $white;
+    text-align: center;
   }
 
-  button:hover, button:focus {
+  .header__tabs-item:hover, .header__tabs-item:focus {
     background-color: $white2;
     color: $black;
+    cursor: pointer;
   }
 
-  button::first-letter {
+  .header__tabs-item::first-letter {
     text-transform: uppercase;
   }
 
@@ -42,6 +44,7 @@
   #my-account:hover,
   #back-events:hover {
     text-decoration: underline;
+    cursor: pointer;
   }
   
   #my-account {
