@@ -19,7 +19,7 @@ const InterestedMessage = ({ handleInterestedBtn, handleGoingBtn }) => {
     handleInterestedBtn(),
     handleGoingBtn()
   }
-  
+
   return (
     <>
       <div>
@@ -40,7 +40,6 @@ const EventInteractions = () => {
 
   const handleGoingBtn = () => {
     setGoing(!going);
-    console.log(going)
   };
 
   const handleInterestedBtn = () => {
