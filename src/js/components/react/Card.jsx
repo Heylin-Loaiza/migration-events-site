@@ -1,4 +1,4 @@
-import { EventCard } from "./EventCard";
+import {EventInteractions} from './ButtonInteractions';
 
 const response = [
   {
@@ -51,12 +51,35 @@ const response = [
   }
 ];
 
-const MainContent = () => {
+const Card = ({id, title, image, location, price}) => {
   return (
-    <main id="main-gallery" className="main-gallery main-container">
-      <EventCard props= {response} />
-    </main>
+  <li>
+    <img src={image} alt={title}/>
+    <div className="gallery__text">
+      <div className="event__info">
+        <h3>{title}</h3>
+        <p className="date"></p>
+        <p>{location.address} • {location.city}, {location.state}.</p>
+        <strong>{price}</strong>
+      </div>
+      <div className="interactions-container" data-id={id}>
+        <EventInteractions />
+      </div>
+    </div>
+  </li>
   )
 }
 
-export {MainContent}
+const CardList = () => {
+  const Cards = response.map(item => <Card 
+    key={item.id} 
+    title={item.title} 
+    image={item.image}
+    location={item.location}
+    price={item.price}
+  />)
+
+  return <ul>{Cards}</ul>
+}
+
+export {CardList}

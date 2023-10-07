@@ -17,7 +17,7 @@ const accountTab = () => {
     <a href="./account.html" id="my-account">
       My account &rarr;
     </a>
-  );
+  )
 };
 
 const Header = () => {
